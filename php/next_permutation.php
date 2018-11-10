@@ -10,6 +10,8 @@
 // $q = ['c','d','e','a','b'];
 // $q = [5,7,9,1,3];
 // $q = range(1, 3);
+
+/*
 $q = range(1, 9, 2);
 
 $eof = true;
@@ -21,6 +23,7 @@ while($eof) {
         $eof = false;
     }
 }
+*/
 
 function next_permutation($arr) {
     $rev_count = 0;
@@ -52,7 +55,7 @@ function next_permutation($arr) {
 
         $old_num = $arr[$target];
         $order = array_search($arr[$target], $arr2);
-        
+
         // 新しい数字を除外する
         if ($order !== false) {
             $arr[$target] = $arr2[$order + 1];
@@ -62,11 +65,11 @@ function next_permutation($arr) {
         }
         // 残りの配列をソートする
         sort($arr2);
-        
+
         for ($i = 0; $i < count($arr2); $i++) {
-            $arr[$target + 1 + $i] = $arr2[$i];                        
+            $arr[$target + 1 + $i] = $arr2[$i];
         }
-        
+
         // echo implode(",", $arr) . PHP_EOL;
 
         return $arr;
